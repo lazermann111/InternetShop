@@ -2,13 +2,14 @@ package view.impl;
 
 
 import service.UserService;
+import service.UserServiceImpl;
 import view.Menu;
 
 import java.util.Scanner;
 
 public class LoginMenu implements Menu {
 
-    private UserService userService;
+    private UserService userService = new UserServiceImpl();
     private String[] items = {"1.Login", "2.Register"};
     private Scanner scanner;
 
@@ -52,7 +53,7 @@ public class LoginMenu implements Menu {
 
         }
         else {
-            System.out.println("Wrong username/pasword");
+            System.out.println("Wrong username/password");
             show();
         }
     }
